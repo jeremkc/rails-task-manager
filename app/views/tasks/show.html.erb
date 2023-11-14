@@ -1,0 +1,23 @@
+<%# reutiliser @task -> details etc %>
+<div>
+<%= @task.title %>
+</div>
+
+<div>
+<%= @task.details%>
+</div>
+
+<div>
+<%= @task.completed %>
+</div>
+
+<%# bouton pour revenir back to list %>
+<%=link_to 'back to list', tasks_path %>
+
+<%=link_to 'update the task', edit_path %>
+
+<%= link_to "Delete",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+<%# class: "btn-primary" %>
